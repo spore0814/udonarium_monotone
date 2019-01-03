@@ -1,5 +1,9 @@
 void((function(undefined){
     try {
+        if(location.hostname !== 'character-sheets.appspot.com'){
+            window.alert('このサイトでは使用できません');
+            return;
+        }
         let url;
         let bloburl;
         let a;
@@ -23,10 +27,7 @@ void((function(undefined){
         let specials = new Array(document.getElementById('specials').getElementsByTagName('tbody')[0].getElementsByTagName('tr').length);
         let skillsName = new Array(document.getElementById('skills').getElementsByTagName('tbody')[0].getElementsByTagName('tr').length);
         let skillsData = new Array(document.getElementById('skills').getElementsByTagName('tbody')[0].getElementsByTagName('tr').length);
-        if(location.hostname !== 'character-sheets.appspot.com'){
-            window.alert('このサイトでは使用できません');
-            return;
-        }
+
 
         function makeNormalElement(eName,eAttrubute,eText){
             let elem = document.createElement('data');
